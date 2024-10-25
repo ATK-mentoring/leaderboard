@@ -26,6 +26,7 @@ function getScores_ALL(Web $w) {
             "score" => $score->player_score
         ];
     }
+    $payload = ["all_scores" => $results];
     $w->setLayout(null);
-    $w->out(json_encode($results));
+    $w->out(json_encode($payload));
 }
