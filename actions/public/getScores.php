@@ -1,7 +1,7 @@
 <?php
 
 function getScores_ALL(Web $w) {
-    header('Access-Control-Allow-Origin: *');
+    //header('Access-Control-Allow-Origin: *');
     header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS, FETCH");
     $p = $w->pathMatch("hash");
     
