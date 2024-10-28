@@ -16,7 +16,11 @@ function getScores_ALL(Web $w) {
     $scores = LeaderboardService::getInstance($w)->getScoresForGameId($game->id);
     
     usort($scores, function($a, $b){
-        return (intVal($a->player_score) < intVal($b->player_score));
+        if (intVal($a->player_score) < intVal($b->player_score)){
+            return 1;
+        } else {
+            return 0;
+        }
     });
 
     $results = [];
