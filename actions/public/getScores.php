@@ -1,6 +1,8 @@
 <?php
 
 function getScores_ALL(Web $w) {
+    header('Access-Control-Allow-Origin: https://atk-mentoring.github.io');
+    header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS, FETCH");
     $p = $w->pathMatch("hash");
     
     if (empty($p['hash'])) {
