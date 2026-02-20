@@ -1,6 +1,7 @@
 <?php
 
 function addScore_ALL(Web $w) {
+    $w->setLayout(null);
     //check if we are editing or creating a new game
     $p = $w->pathMatch("hash", "player_name", "player_score");
     
@@ -21,6 +22,7 @@ function addScore_ALL(Web $w) {
 
     //check if score can be added
     LeaderboardService::getInstance($w)->addNewScore($game->id, $p_name, $p_score);
+
 
 
 
