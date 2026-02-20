@@ -35,7 +35,7 @@ class LeaderboardService extends DbService {
         //check how many saved scores in the game
         $is_top_ten = false;
         $can_save = false;
-        $lowest_score = new LeaderboardScore($w);
+        $lowest_score = new LeaderboardScore($this->w);
         $scores = $this->getScoresForGameId($game_id);
         if (empty($scores) || Count($scores) < 10) {
             $is_top_ten = true;
@@ -111,5 +111,6 @@ class LeaderboardService extends DbService {
     // }
 
 }
+
 
 
