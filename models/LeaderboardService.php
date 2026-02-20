@@ -47,10 +47,10 @@ class LeaderboardService extends DbService {
             $lowest_score = '99999999999999999';
             foreach($scores as $score) {
                 if ($score->player_score < $lowest_score) {
-                    $lowest_score = $score->player_score;
+                    $lowest_score = $score;
                 }
             }
-            if (!empty($lowest_score) && $player_score > $lowest_score) {
+            if (!empty($lowest_score) && $player_score > $lowest_score->player_score) {
                 //$lowest_score->delete();
                 $is_top_ten = true;
             }
@@ -111,3 +111,4 @@ class LeaderboardService extends DbService {
     // }
 
 }
+
