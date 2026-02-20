@@ -50,7 +50,7 @@ class LeaderboardService extends DbService {
                     $lowest_score = $score->player_score;
                 }
             }
-            if (!empty($lowest_score) && $player_score > $lowest_score->player_score) {
+            if (!empty($lowest_score) && $player_score > $lowest_score) {
                 //$lowest_score->delete();
                 $is_top_ten = true;
             }
@@ -109,4 +109,5 @@ class LeaderboardService extends DbService {
     //         new MenuLinkStruct("New Game", "leaderboard/gameEdit")
     //     ];
     // }
+
 }
